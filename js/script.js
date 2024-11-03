@@ -1,5 +1,8 @@
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('nav-links');
+const counters = document.querySelectorAll('.counter');
+const statisticsSection = document.getElementById('statistics');
+
 
 burger.addEventListener('click', () => {
     navLinks.classList.toggle('show');
@@ -44,3 +47,42 @@ window.addEventListener("load", () => {
     });
 
 });
+
+const animateCounters = () => {
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-count');
+
+        const updateCount = () => {
+            const count = +counter.innerText.replace(' +', ''); 
+            const increment = Math.ceil(target / 200); 
+
+            if (count < target) {
+                counter.innerText = count + increment + ' +'; 
+                setTimeout(updateCount, 1); 
+            } else {
+                counter.innerText = target + ' +'; 
+            }
+        };
+        updateCount();
+    });
+};
+
+const isElementInViewport = (el) => {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
+
+const handleScroll = function() {
+    if (isElementInViewport(statisticsSection)) {
+        animateCounters(); 
+        window.removeEventListener('scroll', handleScroll);
+    }
+};
+
+
+window.addEventListener('scroll', handleScroll);
