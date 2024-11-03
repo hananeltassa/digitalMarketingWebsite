@@ -92,6 +92,7 @@ nav .logo img{
 /* Hero-Section */
 
 .hero-section{
+    position: relative;
     justify-content: space-between; 
     align-items: center; 
     background-color: white;
@@ -119,11 +120,13 @@ nav .logo img{
 }
 
 .hero-image {
-    max-width: 1200px; 
-    width: 100%; 
+    width: 120%; 
+    max-width: 2000px;
     height: auto; 
-    margin-right: 40px; 
-    margin-left: 0; 
+    margin-right: 50px; 
+    margin-left: 0;
+    position: relative;
+    z-index: 100; 
 }
 
 .email-input {
@@ -135,6 +138,20 @@ nav .logo img{
     max-width: 300px;
     font-size: 16px;
     height: 40px;
+}
+
+.circle-background {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    width: 500px; 
+    height: 500px;
+    background: linear-gradient(45deg, #21DADB, #35BBDF, #4D94E6);
+    margin-left: 380px;
+    border-radius: 50%; 
+    margin-top: 0;
+    transform: translate(-50%, -50%); 
+    z-index: 1; 
 }
 
 
@@ -198,6 +215,12 @@ nav .logo img{
         max-width: 80%; 
         margin: 0 auto 20px; 
     }
+    .circle-background {
+        width: 300px; 
+        height: 300px; 
+        margin-left: 50px;
+        margin-top: -100px; 
+    }
 }
 
 @media (max-width: 480px){
@@ -225,5 +248,12 @@ nav .logo img{
     .hero-image {
         max-width: 90%; 
         margin: 0 auto 20px; 
+    }
+
+    .circle-background {
+        width: 200px; 
+        height: 200px; 
+        margin-left: 20px;
+        margin-top: -120px; 
     }
 }
