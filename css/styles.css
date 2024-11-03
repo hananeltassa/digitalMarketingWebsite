@@ -31,6 +31,7 @@ nav .logo img{
     height: 140px;
     margin-left: 40px;
     z-index: 2;
+    margin-top: 10px;
 }
 
 .nav-links{
@@ -131,7 +132,7 @@ nav .logo img{
     border-radius: 5px;
     margin: 0px;
     width: 70%;
-    max-width: 250px;
+    max-width: 300px;
     font-size: 16px;
     height: 40px;
 }
