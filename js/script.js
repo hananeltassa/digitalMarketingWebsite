@@ -84,5 +84,18 @@ const handleScroll = function() {
     }
 };
 
-
 window.addEventListener('scroll', handleScroll);
+
+const cards = document.querySelectorAll('.service-card');
+        
+    cards.forEach(card => {
+        const cardInner = card.querySelector('.service-card-inner');
+
+        card.addEventListener('mouseenter', () => {
+            gsap.to(cardInner, { rotationY: 180, duration: 0.6, ease: "power2.inOut" });
+        });
+            
+        card.addEventListener('mouseleave', () => {
+            gsap.to(cardInner, { rotationY: 0, duration: 0.6, ease: "power2.inOut" });
+        });
+    });
