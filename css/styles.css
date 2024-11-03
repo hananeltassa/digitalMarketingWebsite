@@ -16,14 +16,19 @@ nav {
     justify-content: space-between;
     padding: 5px;
     background-color: black;
+    position: relative;
+    z-index: 2;
 }
 
 nav .logo img{
     height: 150px;
+    margin-left: 20px;
+    z-index: 2;
 }
 
 .nav-links{
     list-style: none;
+    margin-right: 20px;
 }
 
 .nav-links li {
@@ -35,9 +40,53 @@ nav .logo img{
     color: var(--color3);
     transition: color 0.3s ease;
     font-weight: bold;
+    margin-right: 20px;
 }
 
 .nav-links a:hover {
     color: var(--color2);
 }
 
+/* Burger Menu */
+.burger {
+    display: none; 
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color3);
+    margin: 3px 20px;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column; 
+        width: 100%; 
+        background-color: black; 
+        position: absolute; 
+        top: 120px;
+        left: 0px; 
+        z-index: 1; 
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 30px;
+    }
+
+    .logo {
+        display: flex; 
+        align-items: center; 
+    }
+}
