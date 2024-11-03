@@ -9,6 +9,13 @@
     display: flex;
 }
 
+h1 {
+    font-size: 4.2rem; 
+    font-weight: bold; 
+    margin-bottom: 20px;
+    font-family: 'ManropeBold';
+}
+
 /* Nav */
 nav {
     display: flex;
@@ -16,7 +23,7 @@ nav {
     justify-content: space-between;
     background-color: white;
     position: relative;
-    height: 100px;
+    height: 95px;
     z-index: 2;
 }
 
@@ -68,7 +75,7 @@ nav .logo img{
     background: linear-gradient(90deg, #21DADB, #35BBDF); 
     border: none; 
     color: white;
-    padding: 10px 20px; 
+    padding: 12px 20px;
     border-radius: 5px; 
     cursor: pointer; 
     margin-left: auto; 
@@ -79,6 +86,54 @@ nav .logo img{
 
 .get-started:hover {
     background: linear-gradient(90deg, #35BBDF, #4D94E6); 
+}
+
+/* Hero-Section */
+
+.hero-section{
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: white;
+    padding: 40px; 
+    margin-top: 0;
+    border-top: 1px solid; 
+    border-image: var(--gradient) 1;
+    margin: 2px;
+    flex-direction: row;
+}
+
+.hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 20px;
+    max-width: 40%;
+    margin-left: 30px;
+}
+
+.hero-input-group{
+    width: 100%;
+    align-items: center ;
+    margin-top: 30px;
+}
+
+.hero-image {
+    max-width: 1200px; 
+    width: 100%; 
+    height: auto; 
+    margin-right: 40px; 
+    margin-left: 0; 
+}
+
+.email-input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0px;
+    width: 70%;
+    max-width: 250px;
+    font-size: 16px;
+    height: 40px;
 }
 
 
@@ -110,11 +165,64 @@ nav .logo img{
         display: flex; 
         align-items: center; 
     }
-}
 
+    .hero-section {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+    }
+
+    .hero-content {
+        order: 2; 
+        max-width: 100%; 
+        padding: 10px; 
+        text-align: left; 
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; 
+    }
+
+    .hero-content p {
+        font-size: 1rem; 
+    }
+
+    .hero-input-group {
+        justify-content: center; 
+        width: 90%; 
+    }
+
+    .hero-image {
+        order: 1; 
+        max-width: 80%; 
+        margin: 0 auto 20px; 
+    }
+}
 
 @media (max-width: 480px){
     .get-started {
         display: none; 
+    }
+    .hero-content h1 {
+        font-size: 2rem; 
+        margin-bottom: 10px; 
+    }
+    .hero-content p {
+        font-size: 0.9rem; 
+    }
+
+    .hero-input-group {
+        flex-direction: column;
+        align-items: stretch; 
+    }
+
+    .email-input {
+        width: 100%; 
+        margin-bottom: 10px; 
+    }
+
+    .hero-image {
+        max-width: 90%; 
+        margin: 0 auto 20px; 
     }
 }
