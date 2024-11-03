@@ -5,6 +5,10 @@
     font-family: 'Manrope', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .flex{
     display: flex;
 }
@@ -111,6 +115,7 @@ nav .logo img{
     padding: 20px;
     max-width: 40%;
     margin-left: 30px;
+    margin-top: 20px;
 }
 
 .hero-input-group{
@@ -154,6 +159,53 @@ nav .logo img{
     z-index: 1; 
 }
 
+.why-us-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #21DADB, #35BBDF); 
+    border-radius: 12px; 
+    text-align: center; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    color: #fff; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.why-us-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px; 
+}
+
+.services-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; }
+
+.service-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px; 
+    padding: 20px; 
+    margin: 15px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s; 
+    width: 300px; 
+
+}
+
+.service-card:hover {
+    transform: scale(1.05); 
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #4D94E6; 
+    margin-top: 10px;
+}
+
+.service-card p {
+    font-size: 1rem; 
+    color: #333; 
+    margin: 10px 0; 
+}
 
 @media (max-width: 768px) {
     .burger {
@@ -221,6 +273,15 @@ nav .logo img{
         margin-left: 50px;
         margin-top: -100px; 
     }
+
+    .why-us-section h2 {
+        font-size: 2rem; 
+    }
+
+    .service-card {
+        width: 90%; 
+        margin: 10px 0; 
+    }
 }
 
 @media (max-width: 480px){
@@ -255,5 +316,21 @@ nav .logo img{
         height: 200px; 
         margin-left: 20px;
         margin-top: -120px; 
+    }
+
+    .why-us-section h2 {
+        font-size: 1.5rem; 
+    }
+
+    .service-card {
+        padding: 15px; 
+    }
+
+    .service-card h3 {
+        font-size: 1.25rem; 
+    }
+
+    .service-card p {
+        font-size: 0.9rem; 
     }
 }
