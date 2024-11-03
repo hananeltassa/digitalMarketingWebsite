@@ -14,21 +14,24 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px;
-    background-color: black;
+    background-color: white;
     position: relative;
+    height: 100px;
     z-index: 2;
 }
 
 nav .logo img{
-    height: 150px;
-    margin-left: 20px;
+    height: 140px;
+    margin-left: 40px;
     z-index: 2;
 }
 
 .nav-links{
     list-style: none;
-    margin-right: 20px;
+    align-items: center;
+    margin: 0; 
+    flex-grow: 1;
+    justify-content: flex-end;
 }
 
 .nav-links li {
@@ -61,6 +64,24 @@ nav .logo img{
     margin: 3px 20px;
 }
 
+.get-started {
+    background: linear-gradient(90deg, #21DADB, #35BBDF); 
+    border: none; 
+    color: white;
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-left: auto; 
+    margin-right: 20px; 
+    font-weight: bold; 
+    transition: background 0.3s ease; 
+}
+
+.get-started:hover {
+    background: linear-gradient(90deg, #35BBDF, #4D94E6); 
+}
+
+
 @media (max-width: 768px) {
     .burger {
         display: flex;
@@ -72,7 +93,7 @@ nav .logo img{
         width: 100%; 
         background-color: black; 
         position: absolute; 
-        top: 120px;
+        top: 100px;
         left: 0px; 
         z-index: 1; 
     }
@@ -88,5 +109,12 @@ nav .logo img{
     .logo {
         display: flex; 
         align-items: center; 
+    }
+}
+
+
+@media (max-width: 480px){
+    .get-started {
+        display: none; 
     }
 }
