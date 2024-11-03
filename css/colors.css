@@ -1,0 +1,7 @@
+:root {
+    --color1: #21DADB;
+    --color2: #35BBDF;
+    --color3: #4D94E6;
+    --gradient: linear-gradient(135deg, var(--color1), var(--color2), var(--color3));
+  }
+  

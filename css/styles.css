@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+}
+
+.flex{
+    display: flex;
+}
+
+/* Nav */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: black;
+}
+
+nav .logo img{
+    height: 150px;
+}
+
+.nav-links{
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color3);
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: var(--color2);
+}
+
