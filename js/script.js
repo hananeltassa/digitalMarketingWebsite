@@ -46,6 +46,19 @@ window.addEventListener("load", () => {
         delay: 2.3 
     });
 
+    gsap.to(".rotating-tk", {
+        rotation: 360,
+        duration: 8,
+        ease: "linear",
+        repeat: -1 
+    });
+    gsap.to(".rotating-insta", {
+        rotation: 360,
+        duration: 8,
+        ease: "linear",
+        repeat: -1 
+    });
+
 });
 
 const animateCounters = () => {
@@ -78,22 +91,22 @@ const isElementInViewport = (el) => {
 };
 
 const handleScroll = function() {
-    if (isElementInViewport(statisticsSection)) {
+     if (isElementInViewport(statisticsSection)) {
         animateCounters(); 
-        window.removeEventListener('scroll', handleScroll);
+         window.removeEventListener('scroll', handleScroll);
     }
-};
+ };
 
-window.addEventListener('scroll', handleScroll);
+ window.addEventListener('scroll', handleScroll);
 
-const cards = document.querySelectorAll('.service-card');
+ const cards = document.querySelectorAll('.service-card');
         
-    cards.forEach(card => {
-        const cardInner = card.querySelector('.service-card-inner');
+     cards.forEach(card => {
+         const cardInner = card.querySelector('.service-card-inner');
 
         card.addEventListener('mouseenter', () => {
-            gsap.to(cardInner, { rotationY: 180, duration: 0.6, ease: "power2.inOut" });
-        });
+             gsap.to(cardInner, { rotationY: 180, duration: 0.6, ease: "power2.inOut" });
+         });
             
         card.addEventListener('mouseleave', () => {
             gsap.to(cardInner, { rotationY: 0, duration: 0.6, ease: "power2.inOut" });

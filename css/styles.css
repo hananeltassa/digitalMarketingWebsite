@@ -63,6 +63,7 @@ nav .logo img{
 }
 
 /* Burger Menu */
+
 .burger {
     display: none; 
     flex-direction: column;
@@ -86,7 +87,6 @@ nav .logo img{
     margin-left: auto; 
     margin-right: 20px; 
     font-weight: bold; 
-    transition: background 0.3s ease; 
 }
 
 .get-started:hover {
@@ -100,12 +100,18 @@ nav .logo img{
     justify-content: space-between; 
     align-items: center; 
     background-color: white;
-    padding: 40px; 
+    padding: 30px; 
     margin: 0;
     border-top: 1px solid; 
     border-image: var(--gradient) 1;
     margin: 2px;
     flex-direction: row;
+    z-index: 2;
+}
+
+.hero-section h1{
+    font-size: 5rem;
+    color: var(--color3);
 }
 
 .hero-content {
@@ -125,10 +131,10 @@ nav .logo img{
 }
 
 .hero-image {
-    width: 100%; 
-    max-width: 900px;
+    width: 98%; 
+    max-width: 1200px;
     height: auto; 
-    margin-right: 30px; 
+    margin-right: 40px; 
     margin-left: 0;
     position: relative;
     z-index: 100; 
@@ -145,48 +151,161 @@ nav .logo img{
     height: 40px;
 }
 
-.circle-background {
-    position: absolute;
-    top: 50%;
-    left: 50%; 
-    width: 500px; 
-    height: 500px;
-    background: linear-gradient(45deg, #21DADB, #35BBDF, #4D94E6);
-    margin-left: 310px;
+.gradient-circle {
+    width: 8vw; 
+    height: 8vw; 
     border-radius: 50%; 
-    margin-top: 0;
-    transform: translate(-50%, -50%); 
-    z-index: 1; 
+    background: linear-gradient(135deg, #21DADB, #35BBDF, #4D94E6);
+    position: absolute;
+    top: 10vh;
+    left: -8px;
+    transform: translateX(-50%); 
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.gradient-circle-1{
+    width: 4vw; 
+    height: 4vw; 
+    border-radius: 50%; 
+    background: linear-gradient(90deg, #21DADB, #35BBDF, #4D94E6);
+    position: absolute;
+    top: 40vh;
+    left: 10vh;
+    transform: translateX(-50%); 
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.rotating-tk {
+    width: 5vw; 
+    height: 5vw;
+    position: absolute;
+    top: 60vh; 
+    left: 55vw; 
+    z-index: 10;
+}
+.rotating-insta {
+    width: 5vw; 
+    height: 5vw;
+    position: absolute;
+    top: 50vh; 
+    left: 45vw; 
+    z-index: 10;
+}
+
+.rotating-fb{
+    width: 4vw; 
+    height: 4vw;
+    position: absolute;
+    top: 20vh; 
+    left: 55vw; 
+    z-index: 10;
+}
+
+.rotating-yt{
+    width: 4vw; 
+    height: 4vw;
+    position: absolute;
+    top: 25vh; 
+    left: 45vw; 
+    z-index: 10;
+}
+
+.rotating-x{
+    width: 4vw; 
+    height: 4vw;
+    position: absolute;
+    top: 38vh; 
+    left: 52vw; 
+    z-index: 10;
 }
 
 
-/*services-container */
+
+/*Statistics */
+
+.statistics-section {
+    position: relative; 
+    background: transparent;
+    margin-top: -120px; 
+    padding: 50px 0; 
+    z-index: 3; 
+    color: #fff;
+}
+
+.statistics-container {
+    align-items: center; 
+    justify-content: center; 
+    gap: 100px; 
+}
+
+.statistics-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0; 
+}
+
+.statistic-card {
+    justify-content: space-around; 
+    align-items: center;
+    padding: 40px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #21DADB, #35BBDF); 
+    margin: 0 auto; 
+    max-width: 100%; 
+    margin: 0 20px;
+}
+
+.statistic-icon {
+    text-align: center;
+}
+
+.statistic-icon img {
+    width: 60px; 
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.counter {
+    font-size: 2rem; 
+    font-weight: bold;
+    margin: 0; 
+}
+
+p {
+    margin: 5px 0 0; 
+}
+
+
+/*services Section */
 .why-us-section {
+    margin: 0px 20px;
     padding: 60px 20px;
     background: linear-gradient(45deg, #21DADB, #35BBDF, #4D94E6);
     border-radius: 12px; 
     text-align: center; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
     color: #fff; 
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .why-us-section h2 {
-    font-size: 2em;
+    font-size: 2.5rem;
     margin-bottom: 20px;
     font-weight: 700;
     color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .services-container {
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap:20px;
 }
 
 .service-card {
-    width: 300px;
+    flex-basis: 22%; 
+    max-width: 250px;
     height: 200px;
     margin: 15px;
     perspective: 1000px;
@@ -244,65 +363,50 @@ nav .logo img{
     padding: 0 10px;
 }
 
-/*Statistics */
-.statistics-section {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f9f9f9; 
-}
-
-.statistics-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.statistic-card {
-    flex: 1 1 200px; 
-    margin: 20px;
-    padding: 20px;
-    background: #ffffff; 
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    display: flex; 
-    flex-direction: column;
-    align-items: center; 
-}
-
-.statistic-card:hover {
-    transform: scale(1.05);
-}
-
-.statistic-icon {
-    margin-bottom: 10px; 
-}
-
-.statistic-icon img {
-    width: 100px; 
-    height: auto; 
-}
-
-.counter {
-    font-size: 2rem; 
-    font-weight: bold;
-    color: #21DADB; 
-    margin: 10px 0; 
-    text-align: center; 
-}
-
-p {
-    font-size: 0.9rem;
-    color: #555; 
-    text-align: center; 
-}
-.statistics-section h2 {
-    font-size: 2rem; 
-    font-weight: bold;
+/* Partners Section */
+.partner {
+    padding: 60px 20px;
+    background-color: #fff;
     color: var(--color2); 
-    margin-bottom: 30px; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
+    text-align: center; 
+    border-radius: 15px;
+}
+
+.partner h2 {
+    font-size: 2.5rem; 
+    margin-bottom: 40px; 
+    font-weight: 700; 
+}
+
+.reasons {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px; 
+}
+
+.reason {
+    background: linear-gradient(45deg, #21DADB, #35BBDF, #4D94E6);
+    border-radius: 12px;
+    padding: 25px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.reason:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15); 
+}
+
+.reason h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px; 
+    color: white; 
+}
+
+.reason p {
+    font-size: 1rem; 
+    line-height: 1.6; 
+    color: #333;
 }
 
 
@@ -343,7 +447,7 @@ p {
 
     .hero-content {
         order: 2; 
-        max-width: 100%; 
+        max-width: 80%; 
         padding: 10px; 
         text-align: left; 
     }
@@ -359,6 +463,8 @@ p {
     .hero-input-group {
         justify-content: center; 
         width: 90%; 
+        margin-bottom: 50px;
+        gap: 10px;
     }
 
     .hero-image {
@@ -366,20 +472,54 @@ p {
         max-width: 80%; 
         margin: 0 auto 20px; 
     }
-    .circle-background {
-        width: 250px; 
-        height: 250px; 
-        margin-left: 50px;
-        margin-top: -100px; 
-    }
 
     .why-us-section h2 {
         font-size: 2rem; 
     }
 
     .service-card {
-        width: 90%; 
+        flex-basis: 45%;
         margin: 10px 0; 
+    }
+    .gradient-circle {
+        width: 12vw;
+        height: 12vw;
+        top: 12vh;
+    }
+
+    .gradient-circle-1 {
+        width: 8vw;
+        height: 8vw;
+        top: 45vh;
+        left: 12vw;
+    }
+
+    .rotating-tk, .rotating-insta, .rotating-fb, .rotating-yt, .rotating-x {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .rotating-tk { top: 25vh; left: 83vw; }
+    .rotating-insta { top: 60vh; left: 82vw; }
+    .rotating-fb { top: 15vh; left: 10vw; }
+    .rotating-yt { top: 30vh; left: 15vw; }
+    .rotating-x { top: 52vh; left: 18vw; }
+
+
+    .statistics-section h2 {
+        font-size: 1.5rem; 
+    }
+
+    .statistics-container {
+        gap: 50px; 
+    }
+
+    .statistic-card {
+        padding: 20px; 
+    }
+
+    .counter {
+        font-size: 1.5rem;
     }
 }
 
@@ -410,19 +550,12 @@ p {
         margin: 0 auto 20px; 
     }
 
-    .circle-background {
-        width: 200px; 
-        height: 200px; 
-        margin-left: 20px;
-        margin-top: -120px; 
-    }
-
     .why-us-section h2 {
         font-size: 1.5rem; 
     }
 
     .service-card {
-        padding: 15px; 
+        flex-basis: 100%; 
     }
 
     .service-card h3 {
@@ -431,5 +564,21 @@ p {
 
     .service-card p {
         font-size: 0.9rem; 
+    }
+
+    .statistics-section h2 {
+        font-size: 1.2rem; 
+    }
+
+    .statistics-container {
+        gap: 30px; 
+    }
+
+    .statistic-card {
+        padding: 15px; 
+    }
+
+    .counter {
+        font-size: 1.2rem; 
     }
 }
