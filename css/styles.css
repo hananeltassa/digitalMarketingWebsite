@@ -396,6 +396,54 @@
 }
 
 
+/*Team */
+.team-section {
+    text-align: center; 
+    padding: 50px 20px;
+    background-color: #fff; 
+}
+
+.team-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.team-container {
+    gap: 30px; 
+}
+
+.team-member {
+    width: 200px; 
+}
+
+.member-image {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    margin-bottom: 10px; 
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.member-image:hover {
+    transform: scale(1.1); 
+    opacity: 0.9; 
+}
+
+.member-image img {
+    width: 100%; 
+    height: auto; 
+}
+
+.member-name {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.member-title {
+    font-size: 1rem;
+    color: #666; 
+}
+
 @media (max-width: 768px) {
     .hero-section {
         flex-direction: column; 
