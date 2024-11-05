@@ -1,3 +1,4 @@
+gsap.registerPlugin(ScrollTrigger);
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('nav-links');
 const counters = document.querySelectorAll('.counter');
@@ -5,14 +6,18 @@ const statisticsSection = document.getElementById('statistics');
 const growthTitle1 = document.getElementById('growth-title-1'); 
 const growthTitle2 = document.getElementById('growth-title-2'); 
 
+let hasAnimatedGrowthTitles = false;
 
-
+// Burger menu toggle
 burger.addEventListener('click', () => {
     navLinks.classList.toggle('show');
 });
 
-
 window.addEventListener("load", () => {
+    animateHeroSection();
+});
+
+const animateHeroSection = () => {
     const heading = document.querySelector(".hero-content h1");
     const text = heading.innerText;
     heading.innerHTML = '';
@@ -50,20 +55,15 @@ window.addEventListener("load", () => {
         delay: 2.3
     });
 
-    gsap.to(".rotating-tk", {
+    gsap.to(".rotating-tk, .rotating-insta", {
         rotation: 360,
         duration: 8,
         ease: "linear",
         repeat: -1
     });
-    gsap.to(".rotating-insta", {
-        rotation: 360,
-        duration: 8,
-        ease: "linear",
-        repeat: -1
-    });
-});
 
+};
+// Statistics animi
 const animateCounters = () => {
     counters.forEach(counter => {
         const target = +counter.getAttribute('data-count');
@@ -92,50 +92,40 @@ const isElementInViewport = (el) => {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 };
-let hasAnimatedGrowthTitles = false;
-
-const animateGrowthTitles = () => {
-    if (!hasAnimatedGrowthTitles) { 
-        hasAnimatedGrowthTitles = true; 
-
-        gsap.from(growthTitle1, {
-            duration: 2,
-            opacity: 0,
-            y: -30,
-            ease: "power3.out",
-        });
-
-        gsap.from(growthTitle2, {
-            duration: 4,
-            opacity: 0,
-            y: -30,
-            ease: "power3.out",
-            delay: 1
-        });
-    }
-};
 
 const handleScroll = () => {
-    if (isElementInViewport(growthTitle1) || isElementInViewport(growthTitle2)) {
-        animateGrowthTitles();
-    }
     
     if (isElementInViewport(statisticsSection)) {
         animateCounters();
-        window.removeEventListener('scroll', handleScroll); 
+        hasAnimatedCounters = true;
+    }
+    
+    if (isElementInViewport(growthTitle1) || isElementInViewport(growthTitle2)) {
+        animateGrowthTitles();
     }
 };
 
 window.addEventListener('scroll', handleScroll);
 
-document.querySelectorAll('.service-card').forEach(card => {
-    const cardInner = card.querySelector('.service-card-inner');
+const animateGrowthTitles = () => {
 
-    card.addEventListener('mouseenter', () => {
-        gsap.to(cardInner, { rotationY: 180, duration: 0.8, ease: "power2.inOut" });
-    });
+    if (!hasAnimatedGrowthTitles) {
+        hasAnimatedGrowthTitles = true;
 
-    card.addEventListener('mouseleave', () => {
-        gsap.to(cardInner, { rotationY: 0, duration: 0.8, ease: "power2.inOut" });
-    });
-});
+        gsap.from(growthTitle1, {
+            duration: 1.5,
+            opacity: 0,
+            scale: 0.5,
+            ease: "back.out",
+            delay: 0.3,
+        });
+
+        gsap.from(growthTitle2, {
+            duration: 1.6,
+            opacity: 0,
+            scale: 0.5,
+            ease: "back.out",
+            delay: 1,
+        });
+    }
+};
