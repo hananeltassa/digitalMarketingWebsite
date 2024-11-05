@@ -14,9 +14,6 @@ burger.addEventListener('click', () => {
     navLinks.classList.toggle('show');
 });
 
-window.addEventListener("load", () => {
-    animateHeroSection();
-});
 
 const animateHeroSection = () => {
     const heading = document.querySelector(".hero-content h1");
@@ -64,6 +61,9 @@ const animateHeroSection = () => {
     });
 
 };
+
+window.addEventListener("load", animateHeroSection);
+
 // Statistics animi
 const animateCounters = () => {
     counters.forEach(counter => {
@@ -83,30 +83,6 @@ const animateCounters = () => {
         updateCount();
     });
 };
-
-const isElementInViewport = (el) => {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-};
-
-const handleScroll = () => {
-    
-    if (isElementInViewport(statisticsSection)) {
-        animateCounters();
-        hasAnimatedCounters = true;
-    }
-    
-    if (isElementInViewport(growthTitle1) || isElementInViewport(growthTitle2)) {
-        animateGrowthTitles();
-    }
-};
-
-window.addEventListener('scroll', handleScroll);
 
 const animateGrowthTitles = () => {
 
@@ -131,6 +107,44 @@ const animateGrowthTitles = () => {
     }
 };
 
+const isElementInViewport = (el) => {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
+
+const handleScroll = () => {
+    
+    if (isElementInViewport(statisticsSection)) {
+        animateCounters();
+        hasAnimatedCounters = true;
+    }
+    
+    if (isElementInViewport(growthTitle1) || isElementInViewport(growthTitle2)) {
+        animateGrowthTitles();
+    }
+};
+
+
+window.addEventListener('scroll', handleScroll);
+
+gsap.from("#footer-title", {
+    scrollTrigger: {
+        trigger: "#footer-title", 
+        start: "top 80%",         
+        toggleActions: "play none none reverse" 
+    },
+    duration: 1,
+    opacity: 0,
+    y: 50,
+    ease: "power2.out"
+});
+
+
 const originalIcon = `
     <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M7 7h10v10"/>
@@ -143,6 +157,7 @@ const newIcon = `
         <path d="m12 5 7 7-7 7"/>
     </svg>
 `;
+
 contactButton.innerHTML = `<span>Contact Us Now</span> ${originalIcon}`; 
 
 const changeIconOnHover = () => {
