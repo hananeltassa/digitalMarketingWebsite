@@ -145,7 +145,8 @@
 }
 
 .statistics-container {
-    gap: 100px; 
+    gap: 100px;
+    justify-content: space-between;
 }
 
 .statistics-section h2 {
