@@ -5,6 +5,7 @@ const counters = document.querySelectorAll('.counter');
 const statisticsSection = document.getElementById('statistics');
 const growthTitle1 = document.getElementById('growth-title-1'); 
 const growthTitle2 = document.getElementById('growth-title-2'); 
+const contactButton = document.querySelector('.contact-button');
 
 let hasAnimatedGrowthTitles = false;
 
@@ -129,3 +130,29 @@ const animateGrowthTitles = () => {
         });
     }
 };
+
+const originalIcon = `
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 7h10v10"/>
+        <path d="M7 17L17 7"/>
+    </svg>
+`;
+const newIcon = `
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#21dadb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+        <path d="M5 12h14"/>
+        <path d="m12 5 7 7-7 7"/>
+    </svg>
+`;
+contactButton.innerHTML = `<span>Contact Us Now</span> ${originalIcon}`; 
+
+const changeIconOnHover = () => {
+    contactButton.addEventListener('mouseover', () => {
+        contactButton.innerHTML = `<span>Contact Us Now</span> ${newIcon}`;
+    });
+
+    contactButton.addEventListener('mouseout', () => {
+        contactButton.innerHTML = `<span>Contact Us Now</span> ${originalIcon}`;
+    });
+};
+
+changeIconOnHover();

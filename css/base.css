@@ -85,6 +85,99 @@ nav .logo img{
     margin: 3px 20px;
 }
 
+.footer {
+    padding: 40px 20px;
+    color: white;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 100%; 
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+
+.footer-content {
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--color1), var(--color2), #4D94E6);
+    border-radius: 15px;
+    padding: 100px 80px; 
+    min-height: 200px;
+    
+}
+
+.footer-content p {
+    margin: 5px 0 15px; 
+    font-size: 16px; 
+}
+
+.footer-bottom {
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.footer-links a {
+    color: var(--color2); 
+    margin: 0 10px; 
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline; 
+}
+
+.footer-rights {
+    color: var(--color2); 
+}
+
+.contact-button {
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px;
+    font-weight: bold; 
+    justify-content: center; 
+    color: white; 
+    transition: all 0.3s; 
+    display: inline-flex; 
+    align-items: center; 
+    margin-top: 10px;
+}
+
+.contact-button span {
+    margin-right: 5px; 
+    z-index: 1; 
+}
+
+.contact-button svg {
+    transition: opacity 0.3s; 
+}
+
+.icon{
+    opacity: 1; 
+}
+
+.icon-hover {
+    opacity: 0;
+}
+
+/* Hover effects */
+.contact-button:hover {
+    background-color: white; 
+    color: transparent; 
+    border-color: transparent; 
+}
+
+.contact-button:hover span {
+    background: linear-gradient(135deg, #21DADB, #35BBDF);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+}
+
+
 @media (max-width: 768px) {
     .burger {
         display: flex;
